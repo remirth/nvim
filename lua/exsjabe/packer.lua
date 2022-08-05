@@ -8,17 +8,11 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use "EdenEast/nightfox.nvim"
   use 'github/copilot.vim'
+  use 'folke/trouble.nvim'
   use 'vim-airline/vim-airline' 
   use 'norcalli/nvim-colorizer.lua'
-  use {
-  'lewis6991/gitsigns.nvim',
-  config = function()
-    require('gitsigns').setup()
-  end
-} 
   use 'neovim/nvim-lspconfig'
   use 'jose-elias-alvarez/null-ls.nvim'
-  use 'MunifTanjim/eslint.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'tpope/vim-fugitive'
   use 'nvim-lua/plenary.nvim'
