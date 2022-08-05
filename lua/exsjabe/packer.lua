@@ -19,6 +19,7 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/eslint.nvim'
+  use 'nvim-telescope/telescope.nvim'
   use 'tpope/vim-fugitive'
   use 'nvim-lua/plenary.nvim'
   use 'hrsh7th/cmp-nvim-lsp'
