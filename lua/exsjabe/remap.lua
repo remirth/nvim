@@ -20,3 +20,4 @@ nnoremap("<leader>fh", "<cmd>Telescope help_tags<CR>")
 
 nnoremap("<leader>qq", "<cmd>TroubleToggle<CR>")
 nnoremap("<leader>qr", "<cmd>TroubleRefresh<CR>")
+nnoremap("<leader>l", "/")
