@@ -15,12 +15,14 @@ null_ls.setup({
     diagnostics.luacheck,
     diagnostics.eslint,
     diagnostics.golangci_lint,
+    diagnostics.jsonlint,
+    diagnostics.codespell,
+    diagnostics.codespell,
     formatting.tidy,
     formatting.stylelint,
     formatting.gofmt,
     formatting.fixjson,
-    diagnostics.jsonlint,
-    diagnostics.codespell,
+    formatting.rustfmt,
   },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
