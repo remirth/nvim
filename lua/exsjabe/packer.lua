@@ -21,6 +21,12 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/vim-vsnip'
+use 'hrsh7th/vim-vsnip-integ'
+  use 'simrat39/rust-tools.nvim'
+
+-- Debugging
+  use 'mfussenegger/nvim-dap'
   use {
   'kyazdani42/nvim-tree.lua',
   requires = {
