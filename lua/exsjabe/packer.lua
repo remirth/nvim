@@ -25,6 +25,13 @@ return require('packer').startup(function()
 use 'hrsh7th/vim-vsnip-integ'
   use 'simrat39/rust-tools.nvim'
 
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+}
+
 -- Debugging
   use 'mfussenegger/nvim-dap'
   use {

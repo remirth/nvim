@@ -23,7 +23,8 @@ null_ls.setup({
     formatting.gofmt,
     formatting.fixjson,
     formatting.rustfmt,
-    code_actions.eslint_d
+    code_actions.eslint_d,
+    code_actions.refactoring
   },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
