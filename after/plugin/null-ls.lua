@@ -18,10 +18,7 @@ null_ls.setup({
     diagnostics.golangci_lint,
     diagnostics.jsonlint,
     diagnostics.codespell,
-    formatting.tidy,
-    formatting.stylelint,
     formatting.gofmt,
-    formatting.fixjson,
     formatting.rustfmt,
     code_actions.eslint_d,
     code_actions.refactoring
