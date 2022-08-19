@@ -20,8 +20,8 @@ null_ls.setup({
     diagnostics.codespell,
     formatting.stylelint,
     formatting.gofmt,
-    formatting.fixjson,
     formatting.rustfmt,
+    formatting.fixjson,
     code_actions.eslint_d,
     code_actions.refactoring
   },
