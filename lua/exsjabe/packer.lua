@@ -15,14 +15,17 @@ return require('packer').startup(function()
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'tpope/vim-fugitive'
+  use 'xiyaowong/nvim-transparent'
+  use 'Carlosiano/vim-synthwave84'
   use 'nvim-lua/plenary.nvim'
+  use 'Rigellute/shades-of-purple.vim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/vim-vsnip'
-use 'hrsh7th/vim-vsnip-integ'
+  use 'hrsh7th/vim-vsnip-integ'
   use 'simrat39/rust-tools.nvim'
 
   use {
