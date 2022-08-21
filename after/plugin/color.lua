@@ -16,3 +16,4 @@ require("transparent").setup({
   exclude = {}, -- table: groups you don't want to clear
 })
 
+vim.cmd('AirlineTheme shades_of_purple')
