@@ -7,6 +7,7 @@ end
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
+local hover = null_ls.builtins.hover
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
@@ -22,8 +23,9 @@ null_ls.setup({
     formatting.gofmt,
     formatting.rustfmt,
     formatting.fixjson,
+    hover.dictionary,
     code_actions.eslint_d,
-    code_actions.refactoring
+    code_actions.gitrebase
   },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

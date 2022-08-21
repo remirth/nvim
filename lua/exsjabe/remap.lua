@@ -15,6 +15,7 @@ nnoremap("<leader>tr", "<cmd>NvimTreeRefresh<CR>")
 nnoremap("<leader>tc", "<cmd>NvimTreeCollapse<CR>")
 nnoremap("<leader>tt", "<cmd>TransparentToggle<CR>")
 
+nnoremap("<leader>c", "<cmd>CodeActionMenu<CR>")
 nnoremap("<leader>ff", "<cmd>Telescope find_files<CR>")
 nnoremap("<leader>fg", "<cmd>Telescope live_grep<CR>")
 nnoremap("<leader>fb", "<cmd>Telescope buffers<CR>")

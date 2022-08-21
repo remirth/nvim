@@ -27,14 +27,20 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
+  use 'lewis6991/hover.nvim'
   use 'simrat39/rust-tools.nvim'
+  use 'weilbith/nvim-code-action-menu'
 
   use {
     "ThePrimeagen/refactoring.nvim",
     requires = {
         {"nvim-treesitter/nvim-treesitter"}
     }
-}
+  }
+  use {
+    'kosayoda/nvim-lightbulb',
+    requires = 'antoinemadec/FixCursorHold.nvim',
+  }
 
 -- Debugging
   use 'mfussenegger/nvim-dap'
