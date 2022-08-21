@@ -18,6 +18,7 @@ return require('packer').startup(function()
   use 'xiyaowong/nvim-transparent'
   use 'Carlosiano/vim-synthwave84'
   use 'nvim-lua/plenary.nvim'
+  use 'lewis6991/gitsigns.nvim'
   use 'Rigellute/shades-of-purple.vim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
