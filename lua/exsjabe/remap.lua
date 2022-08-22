@@ -12,11 +12,14 @@ vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting_sync()' ]]
 vim.cmd [[ command! Hover execute 'lua vim.lsp.buf.hover()' ]]
 
 nnoremap("<leader>tf", "<cmd>NvimTreeFocus<CR>")
+nnoremap("<leader>trf", "<cmd>NvimTreeFindFile<CR>")
+nnoremap("<leader>tq", "<cmd>NvimTreeClose<CR>")
 nnoremap("<leader>tr", "<cmd>NvimTreeRefresh<CR>")
 nnoremap("<leader>tc", "<cmd>NvimTreeCollapse<CR>")
 nnoremap("<leader>tt", "<cmd>TransparentToggle<CR>")
 
 nnoremap("<leader>c", "<cmd>CodeActionMenu<CR>")
+nnoremap("<leader>a", "<C-^>")
 nnoremap("<leader>ff", "<cmd>Telescope find_files<CR>")
 nnoremap("<leader>fg", "<cmd>Telescope live_grep<CR>")
 nnoremap("<leader>fb", "<cmd>Telescope buffers<CR>")
