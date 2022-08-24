@@ -12,6 +12,7 @@ return require('packer').startup(function()
   use 'vim-airline/vim-airline' 
   use 'norcalli/nvim-colorizer.lua'
   use 'neovim/nvim-lspconfig'
+  use 'folke/zen-mode.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'tpope/vim-fugitive'

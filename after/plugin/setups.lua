@@ -5,3 +5,4 @@ require('trouble').setup()
 require('refactoring').setup({})
 
 require('nvim-lightbulb').setup({autocmd = {enabled = true}})
+require('zen-mode').setup()
