@@ -13,7 +13,7 @@ return require('packer').startup(function()
   use 'norcalli/nvim-colorizer.lua'
   use 'neovim/nvim-lspconfig'
   use 'folke/zen-mode.nvim'
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use {'jose-elias-alvarez/null-ls.nvim', commit = "7cd491b7458a5dd23a6fa3abb6c94341be546f7b"}
   use 'nvim-telescope/telescope.nvim'
   use 'tpope/vim-fugitive'
   use 'xiyaowong/nvim-transparent'
