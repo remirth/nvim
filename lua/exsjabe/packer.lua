@@ -30,6 +30,10 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip-integ'
   use 'simrat39/rust-tools.nvim'
   use 'weilbith/nvim-code-action-menu'
+  use 'antoinemadec/FixCursorHold.nvim'
+  use 'ThePrimeagen/harpoon'
+  use 'rcarriga/nvim-notify'
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   use {
     "ThePrimeagen/refactoring.nvim",

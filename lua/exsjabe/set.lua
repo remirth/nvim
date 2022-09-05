@@ -15,5 +15,6 @@ vim.opt.termguicolors = true
 
 vim.opt.wrap = false
 vim.g.mapleader = " "
+vim.g.cursorhold_updatetime = 100
 
 vim.api.nvim_set_option("clipboard","unnamed")
