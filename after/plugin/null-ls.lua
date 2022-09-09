@@ -13,18 +13,16 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
   debug = false,
   sources = {
-    formatting.prettierd,
+    formatting.prettier,
     diagnostics.luacheck,
     diagnostics.eslint,
     diagnostics.golangci_lint,
     diagnostics.jsonlint,
-    diagnostics.codespell,
     formatting.stylelint,
     formatting.gofmt,
     formatting.rustfmt,
     formatting.fixjson,
     hover.dictionary,
-    code_actions.eslint_d,
     code_actions.gitrebase
   },
     on_attach = function(client, bufnr)
@@ -35,7 +33,7 @@ null_ls.setup({
                 buffer = bufnr,
                 callback = function()
                     -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                    vim.lsp.buf.formatting_sync()
+                    vim.lsp.buf.formatting_sync(nil, 1000000000)
                 end,
             })
         end

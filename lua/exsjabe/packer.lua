@@ -34,6 +34,7 @@ return require('packer').startup(function()
   use 'ThePrimeagen/harpoon'
   use 'rcarriga/nvim-notify'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use 'luisiacc/gruvbox-baby'
 
   use {
     "ThePrimeagen/refactoring.nvim",
