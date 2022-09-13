@@ -1,9 +1,16 @@
-tree = require('nvim-tree')
-tree.setup()
+if (not vim.g.vscode) then
 
-require('trouble').setup()
-require('refactoring').setup({})
+    tree = require('nvim-tree')
+    tree.setup()
 
-require('nvim-lightbulb').setup({autocmd = {enabled = true}})
-require('zen-mode').setup()
-vim.notify = require("notify")
+    require('trouble').setup()
+    require('refactoring').setup({})
+
+    require('nvim-lightbulb').setup({
+        autocmd = {
+            enabled = true
+        }
+    })
+    require('zen-mode').setup()
+    vim.notify = require("notify")
+end
