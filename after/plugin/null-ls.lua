@@ -13,7 +13,9 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
   debug = false,
   sources = {
-    formatting.prettier,
+    formatting.prettier.with({
+        extra_filetypes = { "svelte" },
+    }),
     diagnostics.luacheck,
     diagnostics.eslint,
     diagnostics.golangci_lint,
