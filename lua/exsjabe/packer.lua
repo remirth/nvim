@@ -6,58 +6,46 @@ if (not vim.g.vscode) then
     return require('packer').startup(function()
         -- Packer can manage itself
         use 'wbthomason/packer.nvim'
-        use "EdenEast/nightfox.nvim"
-        use 'github/copilot.vim'
-        use 'folke/trouble.nvim'
-        use 'vim-airline/vim-airline'
-        use 'norcalli/nvim-colorizer.lua'
-        use 'neovim/nvim-lspconfig'
-        use 'folke/zen-mode.nvim'
+
         use {
-            'jose-elias-alvarez/null-ls.nvim',
-            commit = "7cd491b7458a5dd23a6fa3abb6c94341be546f7b"
+            'nvim-telescope/telescope.nvim', tag = '0.1.1',
+            -- or                            , branch = '0.1.x',
+            requires = { {'nvim-lua/plenary.nvim'} }
         }
-        use 'nvim-telescope/telescope.nvim'
-        use 'tpope/vim-fugitive'
-        use 'xiyaowong/nvim-transparent'
-        use 'Carlosiano/vim-synthwave84'
-        use 'nvim-lua/plenary.nvim'
-        use 'lewis6991/gitsigns.nvim'
-        use 'Rigellute/shades-of-purple.vim'
-        use 'hrsh7th/cmp-nvim-lsp'
-        use 'hrsh7th/cmp-buffer'
-        use 'hrsh7th/cmp-path'
-        use 'hrsh7th/cmp-cmdline'
-        use 'hrsh7th/nvim-cmp'
-        use 'hrsh7th/vim-vsnip'
-        use 'hrsh7th/vim-vsnip-integ'
-        use 'simrat39/rust-tools.nvim'
-        use 'weilbith/nvim-code-action-menu'
-        use 'antoinemadec/FixCursorHold.nvim'
+
+        use({ 'rose-pine/neovim', as = 'rose-pine' })
+
+        use( 'nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
         use 'ThePrimeagen/harpoon'
-        use 'rcarriga/nvim-notify'
-        use {
-            'nvim-telescope/telescope-fzf-native.nvim',
-            run = 'make'
-        }
-        use 'luisiacc/gruvbox-baby'
+        use 'ThePrimeagen/refactoring.nvim'
+        use 'mbbill/undotree'
+        use 'tpope/vim-fugitive'
+        use("nvim-treesitter/nvim-treesitter-context");
 
         use {
-            "ThePrimeagen/refactoring.nvim",
-            requires = {{"nvim-treesitter/nvim-treesitter"}}
-        }
-        use {
-            'kosayoda/nvim-lightbulb',
-            requires = 'antoinemadec/FixCursorHold.nvim'
-        }
-
-        -- Debugging
-        use 'mfussenegger/nvim-dap'
-        use {
-            'kyazdani42/nvim-tree.lua',
-            requires = {'kyazdani42/nvim-web-devicons' -- optional, for file icons
+            'VonHeikemen/lsp-zero.nvim',
+            branch = 'v2.x',
+            requires = {
+                -- LSP Support
+                {'neovim/nvim-lspconfig'},             -- Required
+                {                                      -- Optional
+                'williamboman/mason.nvim',
+                run = function()
+                    pcall(vim.cmd, 'MasonUpdate')
+                end,
             },
-            tag = 'nightly' -- optional, updated every week. (see issue #1193)
+            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},     -- Required
+            {'hrsh7th/cmp-nvim-lsp'}, -- Required
+            {'L3MON4D3/LuaSnip'},     -- Required
         }
-    end)
+    }
+
+    use("folke/zen-mode.nvim")
+    use("github/copilot.vim")
+    use("eandrju/cellular-automaton.nvim")
+    use("laytan/cloak.nvim")
+end)
 end

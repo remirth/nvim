@@ -1,63 +1,57 @@
 local nnoremap = require("exsjabe.keymap").nnoremap
 local inoremap = require("exsjabe.keymap").inoremap
-local nnoremap = require("exsjabe.keymap").nnoremap
+local vnoremap = require("exsjabe.keymap").vnoremap
 
-nnoremap("<leader>pv", "<cmd>Ex<CR>")
-nnoremap("<leader>pw", "<cmd>w!<CR>")
-nnoremap("<leader>pf", "<cmd>Format<CR>")
-nnoremap("<leader>pp", "<cmd>terminal<CR>")
-nnoremap("<leader>l", "/")
-nnoremap("<leader>k", "<cmd>Hover<CR>")
-inoremap("jj", "<esc>")
+vim.keymap.set("n", "l", "/")
+vim.keymap.set("v", "<C-f>", "=")
+vim.keymap.set("n", "<C-q>", "<C-6>")
 
-vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting_sync()' ]]
-vim.cmd [[ command! Hover execute 'lua vim.lsp.buf.hover()' ]]
+vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-if (not vim.g.vscode) then
-    nnoremap("<leader>tf", "<cmd>NvimTreeFocus<CR>")
-    nnoremap("<leader>trf", "<cmd>NvimTreeFindFile<CR>")
-    nnoremap("<leader>tq", "<cmd>NvimTreeClose<CR>")
-    nnoremap("<leader>tr", "<cmd>NvimTreeRefresh<CR>")
-    nnoremap("<leader>tc", "<cmd>NvimTreeCollapse<CR>")
-    nnoremap("<leader>tt", "<cmd>TransparentToggle<CR>")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-    nnoremap("<leader>c", "<cmd>CodeActionMenu<CR>")
-    nnoremap("<leader>a", "<C-^>")
-    nnoremap("<leader>z", "<cmd>ZenMode<CR>")
+vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
-    nnoremap("<leader>ff", "<cmd>Telescope find_files<CR>")
-    nnoremap("<leader>fg", "<cmd>Telescope live_grep<CR>")
-    nnoremap("<leader>fb", "<cmd>Telescope buffers<CR>")
-    nnoremap("<leader>fh", "<cmd>Telescope help_tags<CR>")
-    nnoremap("<leader>gs", "<cmd>Telescope git_status<CR>")
-    nnoremap("<leader>gaa", "<cmd>Git add .<CR>")
-    nnoremap("<leader>gbb", "<cmd>Telescope git_branches<CR>")
-    nnoremap("<leader>gbc", "<cmd>Telescope git_commits<CR>")
-    nnoremap("<leader>rr", "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>")
+vim.keymap.set("n", "<leader>vwm", function()
+    require("vim-with-me").StartVimWithMe()
+end)
+vim.keymap.set("n", "<leader>svwm", function()
+    require("vim-with-me").StopVimWithMe()
+end)
 
-    nnoremap("<leader>qq", "<cmd>TroubleToggle<CR>")
-    nnoremap("<leader>qr", "<cmd>TroubleRefresh<CR>")
-    nnoremap("<leader>hf", "<cmd>Gitsigns stage_buffer<CR>")
+-- greatest remap ever
+vim.keymap.set("x", "<leader>p", [["_dP]])
 
-    nnoremap("<leader>hr", "<cmd>Gitsigns reset_hunk<CR>")
+-- next greatest remap ever : asbjornHaland
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-    nnoremap("<leader>ht", "<cmd>Gitsigns reset_buffer<CR>")
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
-    nnoremap("<leader>hp", "<cmd>Gitsigns preview_hunk<CR>")
+-- This is going to get me cancelled
+vim.keymap.set("i", "<C-c>", "<Esc>")
 
-    nnoremap("<leader>hb", "<cmd>Gitsigns blame_line<CR>")
+vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new tmux-sessionizer<CR>")
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-    nnoremap("<leader>bb", "<cmd>Gitsigns toggle_current_line_blame<CR>")
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-    nnoremap("<leader>hd", "<cmd>Gitsigns diffthis<CR>")
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-    nnoremap("<leader>td", "<cmd>Gitsigns toggle_deleted<CR>")
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
+vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
-    nnoremap("<leader>hn", "<cmd>Gitsigns next_hunk<CR>")
-
-    nnoremap("<leader>hl", "<cmd>Gitsigns prev_hunk<CR>")
-
-    nnoremap('<leader>ph', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>')
-    nnoremap('<leader>pm', '<cmd>lua require("harpoon.mark").add_file()<CR>')
-
-end
+vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)
