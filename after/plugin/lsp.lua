@@ -16,22 +16,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-Space>'] = cmp.mapping.complete(),
 })
 
-lsp.format_on_save({
-    servers = {
-        ['eslint'] = { 'ts', 'mjs', 'cjs', 'js', "tsx", "jsx", "json", "css", "scss", "less", "html", "vue", "yaml",
-            "graphql" },
-        ['rust_analyzer'] = { 'rust' },
-    }
-})
-
-
-lsp.configure('eslint', {
-    single_file_support = false,
-    on_attach = function(client, bufnr)
-        print('hello eslint')
-    end
-})
-
 
 lsp.on_attach(function(client, bufnr)
     local function disallow_format(servers)
@@ -41,15 +25,15 @@ lsp.on_attach(function(client, bufnr)
         end
     end
 
+
+    local opts = { buffer = bufnr, remap = false }
     vim.keymap.set("n", "<leader>f", function()
         vim.lsp.buf.format({
             async = false,
             timeout_ms = 10000,
-            filter = disallow_format({ "tsserver" }),
+            filter = disallow_format({ "tsserver", "eslint" }),
         })
     end, opts)
-
-    local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
