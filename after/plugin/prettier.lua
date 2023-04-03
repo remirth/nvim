@@ -16,7 +16,7 @@ File_Types = {
 }
 
 prettier.setup({
-    bin = 'prettierd',
+    bin = 'prettier',
     filetypes = File_Types,
     cli_options = {
         config_precedence = "prefer-file",
