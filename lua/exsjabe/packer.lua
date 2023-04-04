@@ -52,5 +52,6 @@ if (not vim.g.vscode) then
         use("laytan/cloak.nvim")
         use('MunifTanjim/prettier.nvim')
         use('jose-elias-alvarez/null-ls.nvim')
+        use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     end)
 end
