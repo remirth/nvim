@@ -1,5 +1,4 @@
 vim.keymap.set("n", "<leader>l", "/")
-vim.keymap.set("v", "<C-f>", "=")
 vim.keymap.set("n", "<C-q>", "<C-6>")
 vim.g.mapleader = " "
 

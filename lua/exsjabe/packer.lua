@@ -45,13 +45,30 @@ if (not vim.g.vscode) then
         }
 
         use("folke/zen-mode.nvim")
-        use("github/copilot.vim")
         use 'nvim-tree/nvim-web-devicons'
+        use {
+            "zbirenbaum/copilot.lua",
+            cmd = "Copilot",
+            event = "InsertEnter",
+            config = function()
+                require("copilot").setup({
+                    suggestion = { enabled = false },
+                    panel = { enabled = false },
+                })
+            end,
+        }
         use 'folke/trouble.nvim'
         use("eandrju/cellular-automaton.nvim")
         use("laytan/cloak.nvim")
         use('MunifTanjim/prettier.nvim')
         use('jose-elias-alvarez/null-ls.nvim')
         use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+        use {
+            "zbirenbaum/copilot-cmp",
+            after = { "copilot.lua" },
+            config = function()
+                require("copilot_cmp").setup()
+            end
+        }
     end)
 end
