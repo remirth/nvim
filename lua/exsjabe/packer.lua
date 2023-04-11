@@ -70,5 +70,6 @@ if (not vim.g.vscode) then
                 require("copilot_cmp").setup()
             end
         }
+        use { 'fgheng/winbar.nvim' }
     end)
 end
