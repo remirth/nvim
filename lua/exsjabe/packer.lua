@@ -47,6 +47,10 @@ if (not vim.g.vscode) then
         use("folke/zen-mode.nvim")
         use 'nvim-tree/nvim-web-devicons'
         use {
+            "phha/zenburn.nvim",
+            config = function() require("zenburn").setup() end
+        }
+        use {
             "zbirenbaum/copilot.lua",
             cmd = "Copilot",
             event = "InsertEnter",
@@ -62,6 +66,8 @@ if (not vim.g.vscode) then
         use("laytan/cloak.nvim")
         use('MunifTanjim/prettier.nvim')
         use('jose-elias-alvarez/null-ls.nvim')
+        use 'NLKNguyen/papercolor-theme'
+use "savq/melange-nvim"
         use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
         use {
             "zbirenbaum/copilot-cmp",
@@ -71,5 +77,6 @@ if (not vim.g.vscode) then
             end
         }
         use { 'fgheng/winbar.nvim' }
+        use { 'styled-components/vim-styled-components' }
     end)
 end
