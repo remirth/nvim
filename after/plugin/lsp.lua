@@ -53,14 +53,44 @@ lsp.set_preferences({
     suggest_lsp_servers = false,
 })
 
+local function disallow_format(servers)
+    return function(client)
+        local contains = vim.tbl_contains(servers, client.name) == false;
+        return contains;
+    end
+end
+
+local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
+local event = "BufWritePre" -- or "BufWritePost"
+local async = event == "BufWritePost"
 lsp.on_attach(function(client, bufnr)
-    local function disallow_format(servers)
-        return function(client)
-            local contains = vim.tbl_contains(servers, client.name) == false;
-            return contains;
-        end
+    if client.supports_method("textDocument/formatting") then
+        local allow_format = disallow_format({ "tsserver", "eslint" })
+        vim.keymap.set("n", "<C-f>", function()
+            vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf(), filter = allow_format, timeout_ms = 10000 })
+        end, { buffer = bufnr, desc = "[lsp] format" })
+        -- format on save
+        vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+        vim.api.nvim_create_autocmd(event, {
+            buffer = bufnr,
+            group = group,
+            callback = function()
+                vim.lsp.buf.format({
+                    bufnr = bufnr,
+                    async = async,
+                    filter = allow_format,
+                    timeout_ms = 10000
+                })
+            end,
+            desc = "[lsp] format on save",
+        })
     end
 
+    if client.supports_method("textDocument/rangeFormatting") then
+        vim.keymap.set("x", "<C-f>", function()
+            vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf(), filter = allow_format, timeout_ms = 10000 })
+        end, { buffer = bufnr, desc = "[lsp] format" })
+    end
 
     local opts = { buffer = bufnr, remap = false }
     vim.keymap.set("n", "<leader>f", function()

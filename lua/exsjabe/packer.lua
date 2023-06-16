@@ -43,7 +43,6 @@ if (not vim.g.vscode) then
                 { 'L3MON4D3/LuaSnip' },     -- Required
             }
         }
-
         use("folke/zen-mode.nvim")
         use 'nvim-tree/nvim-web-devicons'
         use {
@@ -64,11 +63,10 @@ if (not vim.g.vscode) then
         use 'folke/trouble.nvim'
         use("eandrju/cellular-automaton.nvim")
         use("laytan/cloak.nvim")
-        use('MunifTanjim/prettier.nvim')
-        use('jose-elias-alvarez/null-ls.nvim')
+        use { 'jose-elias-alvarez/null-ls.nvim' }
         use 'NLKNguyen/papercolor-theme'
-use "savq/melange-nvim"
-        use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+        use "savq/melange-nvim"
+        use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', commit = "8c17024" }
         use {
             "zbirenbaum/copilot-cmp",
             after = { "copilot.lua" },
