@@ -1,13 +1,12 @@
 if (not vim.g.vscode) then
-    function ColorMyPencils(color)
-        vim.cmd.set("background=dark")
-        color = color or "rose-pine"
-        vim.cmd.colorscheme(color)
+  function ColorMyPencils(color)
+    vim.cmd.set("background=dark")
+    color = color or "catppuccin-mocha"
+    vim.cmd.colorscheme(color)
 
-       -- vim.api.nvim_set_hl(0, "Normal", { bg = "white" })
-       -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "white" })
+    -- vim.api.nvim_set_hl(0, "Normal", { bg = "white" })
+    -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "white" })
+  end
 
-    end
-
-    ColorMyPencils()
+  ColorMyPencils()
 end
