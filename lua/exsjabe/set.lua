@@ -26,4 +26,5 @@ vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 50
 vim.opt.termguicolors = true
 
+vim.opt.shell = 'pwsh'
 vim.api.nvim_set_option("clipboard", "unnamed")
