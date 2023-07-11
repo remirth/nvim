@@ -1,6 +1,6 @@
 if (not vim.g.vscode) then
   function ColorMyPencils(color)
-    vim.cmd.set("background=dark")
+    -- vim.cmd.set("background=dark")
     color = color or "catppuccin-mocha"
     vim.cmd.colorscheme(color)
 

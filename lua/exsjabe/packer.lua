@@ -69,6 +69,7 @@ if (not vim.g.vscode) then
     use("laytan/cloak.nvim")
     use { 'jose-elias-alvarez/null-ls.nvim' }
     use 'NLKNguyen/papercolor-theme'
+    use('MunifTanjim/prettier.nvim')
     use { "catppuccin/nvim", as = "catppuccin" }
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', commit = "8c17024" }
     use {
