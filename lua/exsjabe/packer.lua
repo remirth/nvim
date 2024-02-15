@@ -16,7 +16,11 @@ if (not vim.g.vscode) then
     use({ 'rose-pine/neovim', as = 'rose-pine' })
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use 'ThePrimeagen/harpoon'
+    use {
+      "ThePrimeagen/harpoon",
+      branch = "harpoon2",
+      requires = { {"nvim-lua/plenary.nvim"} }
+    }
     use 'ThePrimeagen/refactoring.nvim'
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
