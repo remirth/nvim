@@ -19,9 +19,8 @@ if (not vim.g.vscode) then
     use {
       "ThePrimeagen/harpoon",
       branch = "harpoon2",
-      requires = { {"nvim-lua/plenary.nvim"} }
+      requires = { { "nvim-lua/plenary.nvim" } }
     }
-    use 'ThePrimeagen/refactoring.nvim'
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
     use("nvim-treesitter/nvim-treesitter-context");
@@ -44,39 +43,16 @@ if (not vim.g.vscode) then
         -- Autocompletion
         { 'hrsh7th/nvim-cmp' },     -- Required
         { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-        { 'L3MON4D3/LuaSnip' },     -- Required
       }
     }
     use("folke/zen-mode.nvim")
     use 'nvim-tree/nvim-web-devicons'
-    use {
-      "zbirenbaum/copilot.lua",
-      cmd = "Copilot",
-      event = "InsertEnter",
-      config = function()
-        require("copilot").setup({
-          suggestion = { enabled = false },
-          panel = { enabled = false },
-          filetypes = {
-            markdown = true,
-            yaml = true
-          }
-        })
-      end,
-    }
     use 'folke/trouble.nvim'
     use("laytan/cloak.nvim")
     use { 'jose-elias-alvarez/null-ls.nvim' }
     use('MunifTanjim/prettier.nvim')
     use { "catppuccin/nvim", as = "catppuccin" }
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', commit = "8c17024" }
-    use {
-      "zbirenbaum/copilot-cmp",
-      after = { "copilot.lua" },
-      config = function()
-        require("copilot_cmp").setup()
-      end
-    }
     use { 'fgheng/winbar.nvim' }
   end)
 end
