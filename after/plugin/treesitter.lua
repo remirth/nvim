@@ -1,11 +1,11 @@
 if (not vim.g.vscode) then
     local tree_shitter = require('nvim-treesitter.install')
-    tree_shitter.compilers = { "clang", "zig"}
+    tree_shitter.compilers = { "gcc", "clang", "zig"}
     tree_shitter.prefer_git = false;
 
     require'nvim-treesitter.configs'.setup {
         -- A list of parser names, or "all" (the five listed parsers should always be installed)
-        ensure_installed = { "c", "lua", "javascript", "typescript", "rust", "vim", "vimdoc", "query" },
+        ensure_installed = { "astro", "c", "lua", "javascript", "typescript", "rust", "vim", "vimdoc", "query" },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,
