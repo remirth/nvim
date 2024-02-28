@@ -23,7 +23,6 @@ if (not vim.g.vscode) then
       branch = "harpoon2",
       requires = { {"nvim-lua/plenary.nvim"} }
     }
-    use 'ThePrimeagen/refactoring.nvim'
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
     use("nvim-treesitter/nvim-treesitter-context");
