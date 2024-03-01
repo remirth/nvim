@@ -1,4 +1,25 @@
-require'lspconfig'.sourcekit.setup{}
+vim.filetype.add({ extension = { templ = "templ" } })
+local lspconfig = require("lspconfig")
+
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"C:/Users/exsjabe/AppData/Local/nvim-data/mason/bin/gopls.CMD"},
+  filetypes = { "go", "gomod", "gowork", "gotmpl", "templ" },
+  root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      },
+    },
+  },
+}
+
+
+lspconfig.sourcekit.setup{}
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
@@ -47,7 +68,6 @@ lsp.setup_nvim_cmp({
     -- Other Sources
     { name = "nvim_lsp", group_index = 2 },
     { name = "path",     group_index = 2 },
-    { name = "luasnip",  group_index = 2 },
   },
 })
 
