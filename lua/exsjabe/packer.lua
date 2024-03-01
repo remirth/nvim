@@ -12,6 +12,8 @@ if (not vim.g.vscode) then
       -- or                            , branch = '0.1.x',
       requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use 'Mofiqul/vscode.nvim'
+
 
     use({ 'rose-pine/neovim', as = 'rose-pine' })
 
