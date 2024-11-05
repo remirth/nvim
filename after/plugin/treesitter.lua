@@ -1,6 +1,6 @@
 if (not vim.g.vscode) then
     local tree_shitter = require('nvim-treesitter.install')
-    tree_shitter.compilers = { "gcc", "clang", "zig"}
+    tree_shitter.compilers = {  "clang", "zig", "gcc"}
     tree_shitter.prefer_git = false;
 
     require'nvim-treesitter.configs'.setup {
