@@ -27,6 +27,8 @@ if (not vim.g.vscode) then
     use 'tpope/vim-fugitive'
     use("nvim-treesitter/nvim-treesitter-context");
 
+
+
     use {
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v2.x',
