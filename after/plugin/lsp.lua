@@ -18,6 +18,33 @@ lspconfig.gopls.setup {
   },
 }
 
+lspconfig.rust_analyzer.setup({
+  settings = {
+    ['rust-analyzer'] = {
+      checkOnSave = {
+        command = "clippy"
+      },
+      cargo = {
+        allFeatures = true,
+        -- Toggle specific features:
+        features = { "all" }
+      },
+      procMacro = {
+        enable = true
+      },
+      -- Add more settings as needed
+    }
+  }
+})
+
+-- lspconfig.tailwindcss.setup({
+--   filetypes = vim.list_extend(
+--     require('lspconfig.server_configurations.tailwindcss').default_config.filetypes or {},
+--     { "rust" }
+--   ),
+--   settings = require('lspconfig.server_configurations.tailwindcss').default_config.settings
+-- })
+
 
 lspconfig.sourcekit.setup {}
 local lsp = require("lsp-zero")
@@ -87,7 +114,7 @@ local event = "BufWritePre" -- or "BufWritePost"
 local async = event == "BufWritePost"
 lsp.on_attach(function(client, bufnr)
   if client.supports_method("textDocument/formatting") then
-    local allow_format = disallow_format({ "tsserver", "eslint" })
+    local allow_format = disallow_format({ "eslint", "ts_ls" })
     vim.keymap.set("n", "<C-f>", function()
       vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf(), filter = allow_format, timeout_ms = 10000 })
     end, { buffer = bufnr, desc = "[lsp] format" })
@@ -119,7 +146,7 @@ lsp.on_attach(function(client, bufnr)
     vim.lsp.buf.format({
       async = false,
       timeout_ms = 10000,
-      filter = disallow_format({ "tsserver", "eslint" }),
+      filter = disallow_format({ "eslint", "ts_ls" }),
     })
   end, opts)
 
