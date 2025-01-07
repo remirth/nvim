@@ -4,7 +4,7 @@ local lspconfig = require("lspconfig")
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  cmd = {"C:/Users/exsjabe/AppData/Local/nvim-data/mason/bin/gopls.CMD"},
+  cmd = { "C:/Users/exsjabe/AppData/Local/nvim-data/mason/bin/gopls.CMD" },
   filetypes = { "go", "gomod", "gowork", "gotmpl", "templ" },
   root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
@@ -19,16 +19,16 @@ lspconfig.gopls.setup {
 }
 
 
-lspconfig.sourcekit.setup{}
+lspconfig.sourcekit.setup {}
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 lsp.ensure_installed({
-  "tsserver",
+  "ts_ls",
   "eslint",
   "rust_analyzer",
 })
-lsp.configure('sourcekit', {force_setup = true})
+lsp.configure('sourcekit', { force_setup = true })
 
 
 

@@ -1,12 +1,11 @@
 function ColorMyPencils(color)
-  -- vim.cmd.set("background=dark")
+  vim.cmd.set("background=dark")
   if color ~= "none" then
     color = color or "vscode"
     vim.cmd.colorscheme(color)
   else
     NoColor()
   end
-
   -- vim.api.nvim_set_hl(0, "Normal", { bg = "white" })
   -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "white" })
 end
@@ -38,5 +37,5 @@ function NoColor()
 end
 
 if (not vim.g.vscode) then
-  ColorMyPencils("none")
+  ColorMyPencils("no-clown-fiesta")
 end

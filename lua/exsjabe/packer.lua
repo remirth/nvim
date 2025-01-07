@@ -24,6 +24,7 @@ if (not vim.g.vscode) then
       requires = { { "nvim-lua/plenary.nvim" } }
     }
     use 'mbbill/undotree'
+    use 'aktersnurra/no-clown-fiesta.nvim'
     use 'tpope/vim-fugitive'
     use("nvim-treesitter/nvim-treesitter-context");
 
