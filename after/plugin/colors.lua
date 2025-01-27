@@ -37,5 +37,5 @@ function NoColor()
 end
 
 if (not vim.g.vscode) then
-  ColorMyPencils("no-clown-fiesta")
+  ColorMyPencils("none")
 end
