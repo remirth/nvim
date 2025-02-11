@@ -15,6 +15,7 @@ if (not vim.g.vscode) then
     use 'Mofiqul/vscode.nvim'
 
 
+    use({ 'rebelot/kanagawa.nvim' })
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use({
       "L3MON4D3/LuaSnip",
