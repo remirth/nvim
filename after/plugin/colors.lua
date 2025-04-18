@@ -37,5 +37,5 @@ function NoColor()
 end
 
 if (not vim.g.vscode) then
-  ColorMyPencils("rose-pine")
+  ColorMyPencils("tokyonight")
 end
